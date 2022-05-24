@@ -1,0 +1,14 @@
+.item {
+  min-height: 230px;
+}
+
+img {
+  float: left;
+  width: 200px;
+  margin-right: 10px;
+}
+
+.right {
+  float: left;
+  width: calc(100% - 250px);
+}

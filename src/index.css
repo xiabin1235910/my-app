@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,93 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #ddd;
+  color: #333;
+  font-family: sans-serif;
+}
+
+.App {
+  margin: 15px;
+  max-width: 900px;
+  text-align: center;
+}
+
+.image-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+
+  max-height: 150px;
+  overflow: hidden;
+
+  position: relative;
+
+  transition: max-height 1s;
+}
+
+.image-container.less {
+  max-height: none;
+  padding-bottom: 30px;
+}
+
+.image-container.less .layer {
+  height: 150px;
+  width: 150px;
+  background-color: #333;
+  opacity: 0.5;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  animation: identifier1 infinite 1s;
+}
+
+.image-container .view-omission {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+}
+
+.image-container.more .view-omission {
+  height: 80px;
+  padding-top: 50px;
+  background-image: linear-gradient(0deg, white, transparent);
+}
+
+.image-container.less .view-omission {}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+}
+
+@keyframes identifier1 {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: 16px;
+  }
+}
+
+@media (min-width: 630px) {
+  .App {
+    margin: 15px auto;
+  }
 }
